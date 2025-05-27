@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ToDo GraphQL API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/graphql": {
+      "post": {
+        "summary": "Send GraphQL query or mutation",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string"
+                  }
+                },
+                "example": {
+                  "query": "query { getTodos { id title completed } }"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "GraphQL Response"
+          }
+        }
+      }
+    }
+  }
+}
